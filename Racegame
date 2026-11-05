@@ -1,0 +1,15 @@
+TARGET = RaceMenu
+OBJS = main.o
+
+CFLAGS = -O2 -G0 -Wall
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+LIBDIR =
+LIBS = -lpspgu -lpspgum -lpspaudio -lpspctrl -lpspdisplay -lpspkernel -lm -lpspiofilemgr
+
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = Race Menu
+
+PSPSDK = $(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak
